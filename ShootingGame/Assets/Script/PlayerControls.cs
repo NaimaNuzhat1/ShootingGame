@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
-        position = new Vector3(0f, 0.779999971f, -17.3700008f);
+        position = new Vector3(0f, 0.779999971f, -17.63f);
         rb.MovePosition(position);
     }
 
@@ -36,7 +36,7 @@ public class PlayerControls : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space) && bulletCount<5)
         {
-            Instantiate(bullet, new Vector3(position.x, 1.56363797f, -16.7215805f), Quaternion.identity);
+            Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f),Quaternion.identity);
         }
         rb.MovePosition(position);
     }
