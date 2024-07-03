@@ -13,6 +13,7 @@ public class gameOver : MonoBehaviour
     public GameObject gameOverWin;
     public TMP_Text score;
     public TMP_Text Hscore;
+    public GameObject instantiateEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,13 +30,21 @@ public class gameOver : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             gameOverWin.SetActive(true);
+            gameOverWin.GetComponent<AudioSource>().Play();
+
+            instantiateEnemy.SetActive(false);
             int result = Int32.Parse(score.text);
             int high = Int32.Parse(Hscore.text);
             if (result > high)
             {
                 PlayerPrefs.SetString("highScore", score.text);
             }
-            Destroy(other.gameObject);
+            GameObject[] enemiesActive = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in enemiesActive)
+            {
+                Destroy(enemy);
+            }
+
         }
         
 

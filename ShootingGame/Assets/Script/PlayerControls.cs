@@ -63,7 +63,7 @@ public class PlayerControls : MonoBehaviour
             Vector2 inputVector = endTouchPosition - startTouchPosition;
             if (Mathf.Abs(inputVector.x) > Mathf.Abs(inputVector.y))
             {
-                if (inputVector.x > 0)
+                if (inputVector.x > 0 )
                 {
                     position.x += 3.5f;
                 }
@@ -80,7 +80,12 @@ public class PlayerControls : MonoBehaviour
     }
     private void LateUpdate()
     {
-        rb.MovePosition(position);
+        if (position.x >= -4 && position.x <= 4)
+        {
+            Debug.Log(position.x);
+            rb.MovePosition(position);
+
+        }
     }
     public void shootClick()
     {
