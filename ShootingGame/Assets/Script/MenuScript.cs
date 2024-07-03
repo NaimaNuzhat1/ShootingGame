@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class MenuScript : MonoBehaviour
     public GameObject mainMenu;
     public GameObject instantiateEnemy;
     public TMP_Text highscore;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void playClick()
     {

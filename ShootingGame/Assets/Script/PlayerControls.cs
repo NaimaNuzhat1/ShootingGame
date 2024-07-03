@@ -10,6 +10,7 @@ public class PlayerControls : MonoBehaviour
     Rigidbody rb;
     Vector3 position;
     public GameObject bullet;
+    public GameObject muzzlePrefab;
     int bulletCount = 0;
 
     private Vector2 startTouchPosition;
@@ -80,17 +81,36 @@ public class PlayerControls : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (position.x >= -4 && position.x <= 4)
+        if (position.x >= -3.5 && position.x <= 3.5)
         {
             Debug.Log(position.x);
             rb.MovePosition(position);
 
         }
+        else
+        {
+            if (position.x >= 3.5)
+            {
+                position.x = 3.5f;
+            }
+            else if (position.x <= -3.5)
+            {
+                position.x = -3.5f;
+            }
+        }
     }
+
     public void shootClick()
     {
-        Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f), Quaternion.identity);
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        if (bulletCount <= 5)
+        {
+            Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f), Quaternion.identity);
+            Instantiate(muzzlePrefab, new Vector3(position.x, 1.56363797f, -17f), Quaternion.identity);
+        }
+
     }
+
 
 
 }
