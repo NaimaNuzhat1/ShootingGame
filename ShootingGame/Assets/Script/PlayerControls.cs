@@ -1,17 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem;
 
 
 public class PlayerControls : MonoBehaviour
 {
     Rigidbody rb;
     Vector3 position;
-    public GameObject bullet;
-    public GameObject muzzlePrefab;
-    int bulletCount = 0;
+
 
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
@@ -21,7 +15,8 @@ public class PlayerControls : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         position = new Vector3(0f, 0.779999971f, -17.63f);
-        rb.MovePosition(position);
+        rb.MovePosition(position); 
+
     }
 
     // Update is called once per frame
@@ -52,6 +47,7 @@ public class PlayerControls : MonoBehaviour
 
     private void Update()
     {
+        //controls
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)
         {
             startTouchPosition = Input.GetTouch(0).position;
@@ -73,9 +69,7 @@ public class PlayerControls : MonoBehaviour
                     position.x -= 3.5f;
                 }
             }
-
         }
-
 
 
     }
@@ -83,7 +77,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (position.x >= -3.5 && position.x <= 3.5)
         {
-            Debug.Log(position.x);
+            //Debug.Log(position.x);
             rb.MovePosition(position);
 
         }
@@ -99,18 +93,4 @@ public class PlayerControls : MonoBehaviour
             }
         }
     }
-
-    public void shootClick()
-    {
-        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
-        if (bulletCount <= 5)
-        {
-            Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f), Quaternion.identity);
-            Instantiate(muzzlePrefab, new Vector3(position.x, 1.56363797f, -17f), Quaternion.identity);
-        }
-
-    }
-
-
-
 }

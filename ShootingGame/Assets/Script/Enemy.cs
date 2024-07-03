@@ -31,9 +31,14 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         count = Int32.Parse(score.text);
-        rb.velocity = transform.forward*moveSpeed;
+        string p1Active = PlayerPrefs.GetString("P1", "InActive");
+        if(p1Active=="InActive")
+        {
+            rb.velocity = transform.forward * moveSpeed;
+        }
     }
 
+    
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {

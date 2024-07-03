@@ -10,7 +10,7 @@ public class InstantiateEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,9 +18,13 @@ public class InstantiateEnemy : MonoBehaviour
     {
         if (!isSpawning)
         {
-            isSpawning = true; //Yep, we're going to spawn
+            string p1 = PlayerPrefs.GetString("P1");
 
-            StartCoroutine(spawnEnemy());
+            if (p1 == "InActive") { 
+                isSpawning = true; //Yep, we're going to spawn
+
+                StartCoroutine(spawnEnemy());
+            }
         }
     }
     IEnumerator spawnEnemy()

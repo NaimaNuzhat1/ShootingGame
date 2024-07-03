@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 
 public class gameOver : MonoBehaviour
