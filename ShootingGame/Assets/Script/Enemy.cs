@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,8 +19,10 @@ public class Enemy : MonoBehaviour
     float moveSpeed = 3f;
     public TMP_Text score;
     int count = 0;
+    Animator animator;
     private void OnEnable()
     {
+        animator = GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody>();
         healthbar = gameObject.transform.Find("Healthbar").gameObject;
         canvas = healthbar.GetComponent<Canvas>();
@@ -41,7 +44,7 @@ public class Enemy : MonoBehaviour
         position = rb.position;
     }
 
-    
+
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
@@ -53,15 +56,28 @@ public class Enemy : MonoBehaviour
         if (slider.value <= 0)
         {
             Instantiate(hitPrefab, position, Quaternion.identity);
-            Destroy(gameObject);
+            StartCoroutine(animate());
             count++;
             score.text = count.ToString();
         }
-        if(collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Finish"))
         {
-            Destroy(gameObject);
-        }
 
+            Destroy(gameObject);
+
+        }
+    }
+        IEnumerator animate()
+        {
+            if (animator)
+            {
+                animator.SetBool("isDead", true);
+
+
+            }
+            yield return new WaitForSeconds(1);
+            Destroy(gameObject);
 
     }
+    
 }
