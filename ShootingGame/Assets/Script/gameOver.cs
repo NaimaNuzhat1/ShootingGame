@@ -9,7 +9,10 @@ public class gameOver : MonoBehaviour
     public GameObject gameOverWin;
     public TMP_Text score;
     public TMP_Text Hscore;
-    public GameObject instantiateEnemy;
+    public GameObject player;
+    public GameObject tank;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +30,25 @@ public class gameOver : MonoBehaviour
         {
             gameOverWin.SetActive(true);
             gameOverWin.GetComponent<AudioSource>().Play();
+            GameObject[] objs = GameObject.FindGameObjectsWithTag("Finish");
 
-            instantiateEnemy.SetActive(false);
+            foreach (var obj in objs)
+            {
+                obj.SetActive(false);
+            }
+            player.SetActive(false);
+            tank.SetActive(true);
+
+
+
             int result = Int32.Parse(score.text);
             int high = Int32.Parse(Hscore.text);
             if (result > high)
             {
                 PlayerPrefs.SetString("highScore", score.text);
             }
+
+
             GameObject[] enemiesActive = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemiesActive)
             {
@@ -51,5 +65,9 @@ public class gameOver : MonoBehaviour
 
 
         SceneManager.LoadScene("Game");
+    }
+    public void onQuitClicked()
+    {
+        Application.Quit();
     }
 }

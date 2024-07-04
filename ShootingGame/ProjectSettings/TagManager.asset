@@ -9,6 +9,7 @@ TagManager:
   - Boundry
   - P1
   - P2
+  - UITank
   layers:
   - Default
   - TransparentFX

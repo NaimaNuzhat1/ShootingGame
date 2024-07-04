@@ -314,7 +314,8 @@ MonoBehaviour:
   gameOverWin: {fileID: 1589564121}
   score: {fileID: 782937353}
   Hscore: {fileID: 1424758831}
-  instantiateEnemy: {fileID: 1289912798}
+  player: {fileID: 1093044576}
+  tank: {fileID: 312554714}
 --- !u!1 &35244644
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,8 +473,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72242093}
   m_LocalRotation: {x: 0.70700127, y: -0.0122173615, z: 0.0122173615, w: 0.70700127}
-  m_LocalPosition: {x: -0.6, y: -0, z: 18.35}
-  m_LocalScale: {x: 0.25209, y: 17.566626, z: 0.19086}
+  m_LocalPosition: {x: -0.53, y: 0, z: 16.23}
+  m_LocalScale: {x: 0.25209, y: 15.151821, z: 0.19086}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245130069}
@@ -796,7 +797,7 @@ GameObject:
   - component: {fileID: 178815362}
   m_Layer: 0
   m_Name: PowerUp
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -983,6 +984,10 @@ PrefabInstance:
     - target: {fileID: 1013459266845585946, guid: ae98f3b2f9fb19e4dba07742ad8d6f4d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013459266845585946, guid: ae98f3b2f9fb19e4dba07742ad8d6f4d, type: 3}
+      propertyPath: m_TagString
+      value: UITank
       objectReference: {fileID: 0}
     - target: {fileID: 1676515232765691307, guid: ae98f3b2f9fb19e4dba07742ad8d6f4d, type: 3}
       propertyPath: m_RootOrder
@@ -1282,7 +1287,7 @@ GameObject:
   - component: {fileID: 481849077}
   m_Layer: 5
   m_Name: ShootButton
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1428,18 +1433,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511338690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2659489, y: 1.2659489, z: 1.2659489}
+  m_LocalScale: {x: 0.9727329, y: 0.9727329, z: 0.9727329}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 804779100}
-  m_Father: {fileID: 2042959637}
-  m_RootOrder: 0
+  m_Father: {fileID: 1246248625}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -84.4}
   m_SizeDelta: {x: 445, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511338692
@@ -1607,7 +1612,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 559901480}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022726141}
+        m_TargetAssemblyTypeName: gameOver, Assembly-CSharp
+        m_MethodName: onQuitClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &559901480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,7 +2309,7 @@ RectTransform:
   m_Children:
   - {fileID: 1974686157}
   m_Father: {fileID: 2042959637}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2730,7 +2747,7 @@ GameObject:
   - component: {fileID: 765218755}
   m_Layer: 5
   m_Name: GunMode
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3597,12 +3614,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246248624}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 577389944}
+  - {fileID: 511338691}
   - {fileID: 2042959637}
   m_Father: {fileID: 2022726140}
   m_RootOrder: 0
@@ -3685,7 +3703,7 @@ GameObject:
   - component: {fileID: 1289912799}
   m_Layer: 0
   m_Name: InstantiateEnemy
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4015,7 +4033,7 @@ RectTransform:
   m_Children:
   - {fileID: 720437663}
   m_Father: {fileID: 2042959637}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4065,7 +4083,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1425413982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022726141}
+        m_TargetAssemblyTypeName: gameOver, Assembly-CSharp
+        m_MethodName: onQuitClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1425413982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4471,7 +4501,7 @@ RectTransform:
   - {fileID: 1814871520}
   - {fileID: 2049654298}
   m_Father: {fileID: 2042959637}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5449,7 +5479,8 @@ MonoBehaviour:
   gameOverWin: {fileID: 1589564121}
   score: {fileID: 782937353}
   Hscore: {fileID: 1424758831}
-  instantiateEnemy: {fileID: 1289912798}
+  player: {fileID: 1093044576}
+  tank: {fileID: 312554714}
 --- !u!114 &2022726142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5497,12 +5528,11 @@ RectTransform:
   m_LocalScale: {x: 1.0442, y: 1.0442, z: 1.0442}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 511338691}
   - {fileID: 709125222}
   - {fileID: 1752195390}
   - {fileID: 1425413980}
   m_Father: {fileID: 1246248625}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}

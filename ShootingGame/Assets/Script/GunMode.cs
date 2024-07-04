@@ -72,9 +72,17 @@ public class GunMode : MonoBehaviour
     {
 
         float speed = PlayerPrefs.GetFloat("P2");
-        Debug.Log(speed);
+
         wait = true;
-        yield return new WaitForSeconds(speed);
+        if(bulletCount==0 || Mode=="Manual")
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(speed);
+        }
+
 
         Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f), Quaternion.identity);
         Instantiate(muzzlePrefab, new Vector3(position.x, 1.56363797f, -17f), Quaternion.identity);
@@ -103,4 +111,5 @@ public class GunMode : MonoBehaviour
             }
         }
     }
+
 }
