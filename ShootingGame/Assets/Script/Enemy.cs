@@ -1,19 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rb;
     public Slider slider;
+    public GameObject hitPrefab;
     GameObject sliderObj;
     GameObject healthbar;
     GameObject PlayerScore;
     Canvas canvas;
+    Vector3 position;
     float moveSpeed = 3f;
     public TMP_Text score;
     int count = 0;
@@ -35,7 +36,9 @@ public class Enemy : MonoBehaviour
         if(p1Active=="InActive")
         {
             rb.velocity = transform.forward * moveSpeed;
+            
         }
+        position = rb.position;
     }
 
     
@@ -49,6 +52,7 @@ public class Enemy : MonoBehaviour
         }
         if (slider.value <= 0)
         {
+            Instantiate(hitPrefab, position, Quaternion.identity);
             Destroy(gameObject);
             count++;
             score.text = count.ToString();

@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4889834609050442467}
+  hitPrefab: {fileID: 108632, guid: fd983eb81b9b75e4e99a14b860ce7452, type: 3}
   score: {fileID: 0}
 --- !u!136 &5686325141440255229
 CapsuleCollider:

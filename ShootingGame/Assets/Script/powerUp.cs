@@ -6,6 +6,7 @@ using UnityEngine;
 public class powerUp : MonoBehaviour
 {
     public GameObject prefab;
+    public GameObject player;
     float[] positions = { -3.5f, 0, 3.5f };
     bool isSpawning = false;
     string[] tags = { "P1", "P2"};
@@ -28,9 +29,15 @@ public class powerUp : MonoBehaviour
     }
     IEnumerator spawnPowerUp()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(40);
+
         int index = Random.Range(0, 2);
         int position = Random.Range(0, 3);
+        if (player.transform.position.x == positions[position])
+        {
+            position = (position + 1) % 3;
+        }
+        
         Instantiate(prefab, new Vector3(positions[position], 0f, -17.63f), Quaternion.Euler(0f, 180, 0f));
         prefab.tag = tags[index];
         isSpawning = false;
@@ -78,7 +85,7 @@ public class powerUp : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         PlayerPrefs.SetString("P1", "InActive");
         Debug.Log("Time Ended:"+PlayerPrefs.GetString("P1"));
         Destroy(gameObject);
@@ -89,7 +96,7 @@ public class powerUp : MonoBehaviour
 
         PlayerPrefs.SetFloat("P2", 0.3f);
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         PlayerPrefs.SetFloat("P2", 0.8f);
         Debug.Log(PlayerPrefs.GetString("P2"));
         Destroy(gameObject);

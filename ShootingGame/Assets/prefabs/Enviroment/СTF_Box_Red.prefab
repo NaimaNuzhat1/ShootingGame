@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5798536803664049673}
   m_Layer: 0
   m_Name: "\u0421TF_Box_Red"
-  m_TagString: P2
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 899767480457190964}
+  player: {fileID: 0}
 --- !u!1001 &1862640757468028482
 PrefabInstance:
   m_ObjectHideFlags: 0

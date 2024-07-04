@@ -2,6 +2,7 @@
 using System.Collections;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -11,6 +12,7 @@ public class GunMode : MonoBehaviour
     public GameObject bullet;
     public GameObject muzzlePrefab;
     public GameObject tank;
+    public Button shootButton;
 
     Rigidbody tankRB;
     GameObject gunMode;
@@ -33,6 +35,7 @@ public class GunMode : MonoBehaviour
     void Update()
     {
         Mode = PlayerPrefs.GetString("Mode", "Manual");
+
         if (Mode == "Auto")
         {
             auto = true;
@@ -49,24 +52,32 @@ public class GunMode : MonoBehaviour
 
     public  void shootClick()
     {
+        GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        if (bullets!=null)
+        {
+            bulletCount = bullets.Length;
+        }
+        else
+        {
+            bulletCount = 0;
+        }
 
-        StartCoroutine(shoot());
-
+        if (bulletCount <= 5 && wait == false)
+            {
+                
+                StartCoroutine(shoot());
+            }
     }
     IEnumerator shoot()
     {
+
         float speed = PlayerPrefs.GetFloat("P2");
         Debug.Log(speed);
         wait = true;
         yield return new WaitForSeconds(speed);
 
-        
-        if (bulletCount <= 5)
-        {
-            Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f), Quaternion.identity);
-            Instantiate(muzzlePrefab, new Vector3(position.x, 1.56363797f, -17f), Quaternion.identity);
-
-        }
+        Instantiate(bullet, new Vector3(position.x, 1.56363797f, -17.63f), Quaternion.identity);
+        Instantiate(muzzlePrefab, new Vector3(position.x, 1.56363797f, -17f), Quaternion.identity);
         wait = false;
     }
     public void manualClicked()
