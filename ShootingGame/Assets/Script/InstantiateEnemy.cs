@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
+
+using TMPro;
 using UnityEngine;
 
 public class InstantiateEnemy : MonoBehaviour
@@ -7,17 +9,34 @@ public class InstantiateEnemy : MonoBehaviour
     public GameObject[] enemy;
     float[] positions = { -3.5f, 0, 3.5f };
     bool isSpawning = false;
+    float waitTime=3f;
+    public TMP_Text score;
+    bool isActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
+
     // Update is called once per frame
     void Update()
     {
+        int count = Int32.Parse(score.text);
         if (!isSpawning)
         {
+            if (count % 10 == 0 && isActive == false)
+            {
+                isActive = true;
+                waitTime -= 0.5f;
+
+
+            }
+            else if (count % 10 != 0)
+            {
+                isActive = false;
+            }
             string p1 = PlayerPrefs.GetString("P1");
 
             if (p1 == "InActive") { 
@@ -29,9 +48,9 @@ public class InstantiateEnemy : MonoBehaviour
     }
     IEnumerator spawnEnemy()
     {
-        yield return new WaitForSeconds(3);
-        int index = Random.Range(0, 3);
-        int position = Random.Range(0, 3);
+        yield return new WaitForSeconds(waitTime);
+        int index = UnityEngine.Random.Range(0, 3);
+        int position = UnityEngine.Random.Range(0, 3);
         Instantiate(enemy[index], new Vector3(positions[position], 0f, 16.3f),Quaternion.Euler(0f, 180, 0f));
         isSpawning = false;
     }

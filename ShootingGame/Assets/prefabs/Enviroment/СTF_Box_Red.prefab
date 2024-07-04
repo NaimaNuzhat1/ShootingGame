@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5798536803664049673}
   m_Layer: 0
   m_Name: "\u0421TF_Box_Red"
-  m_TagString: P2
+  m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

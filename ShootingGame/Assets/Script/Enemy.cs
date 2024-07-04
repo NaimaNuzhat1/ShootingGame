@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     float moveSpeed = 3f;
     public TMP_Text score;
     int count = 0;
+    bool isActive = false;
     Animator animator;
     private void OnEnable()
     {
@@ -36,7 +37,18 @@ public class Enemy : MonoBehaviour
     {
         count = Int32.Parse(score.text);
         string p1Active = PlayerPrefs.GetString("P1", "InActive");
-        if(p1Active=="InActive")
+        if (count % 10 == 0&& isActive==false)
+        {
+            isActive = true;
+            moveSpeed += 0.5f;
+
+
+        }
+        else if (count % 10 != 0)
+        {
+            isActive = false;
+        }
+        if (p1Active=="InActive")
         {
             rb.velocity = transform.forward * moveSpeed;
             
@@ -53,13 +65,15 @@ public class Enemy : MonoBehaviour
             slider.value -= 1;
 
         }
+        
         if (slider.value <= 0)
         {
             Instantiate(hitPrefab, position, Quaternion.identity);
-            StartCoroutine(animate());
+            StartCoroutine(animateDeath());
             count++;
             score.text = count.ToString();
         }
+        
         if (collision.gameObject.CompareTag("Finish"))
         {
 
@@ -67,17 +81,18 @@ public class Enemy : MonoBehaviour
 
         }
     }
-        IEnumerator animate()
+    IEnumerator animateDeath()
+    {
+        if (animator)
         {
-            if (animator)
-            {
-                animator.SetBool("isDead", true);
+            animator.SetBool("isDead", true);
 
 
-            }
-            yield return new WaitForSeconds(1);
-            Destroy(gameObject);
+        }
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
 
     }
+
     
 }
