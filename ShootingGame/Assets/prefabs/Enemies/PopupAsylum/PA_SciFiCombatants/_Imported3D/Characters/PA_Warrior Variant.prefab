@@ -188,6 +188,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 6d75024730cc0954d955e53d878fc4fb, type: 2}
+    - target: {fileID: 9500000, guid: cc633396b5f95da4b916357a5508ee4f, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 29b3b0e5275e5894bb3e6ae70ee3a551, type: 2}
@@ -219,8 +223,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &5908707497774348551
-BoxCollider:
+--- !u!136 &4288764481930789230
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -229,9 +233,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.52, y: 1.87, z: 1}
-  m_Center: {x: -0.04, y: 1.17, z: 0.43}
+  m_Radius: 0.95
+  m_Height: 4.62
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.33, z: -1.04}
 --- !u!114 &3247227580794988771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,3 +252,4 @@ MonoBehaviour:
   slider: {fileID: 8601676562753302740}
   hitPrefab: {fileID: 108632, guid: fd983eb81b9b75e4e99a14b860ce7452, type: 3}
   score: {fileID: 0}
+  brokenTank: {fileID: 0}

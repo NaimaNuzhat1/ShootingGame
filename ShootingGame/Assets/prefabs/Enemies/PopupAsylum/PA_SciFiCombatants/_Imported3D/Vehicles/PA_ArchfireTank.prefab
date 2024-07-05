@@ -318,6 +318,7 @@ MonoBehaviour:
   slider: {fileID: 4889834609050442467}
   hitPrefab: {fileID: 108632, guid: fd983eb81b9b75e4e99a14b860ce7452, type: 3}
   score: {fileID: 0}
+  brokenTank: {fileID: 1987106488136185311, guid: 7ffc232bba2077e4e829f73865009441, type: 3}
 --- !u!136 &5686325141440255229
 CapsuleCollider:
   m_ObjectHideFlags: 0

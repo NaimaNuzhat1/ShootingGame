@@ -10,17 +10,18 @@ public class WaveCounter : MonoBehaviour
     public TMP_Text score;
     public TMP_Text waveCounter;
     bool isActive = false;
+    bool isEnabled = false;
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        isEnabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         int result = Int32.Parse(score.text);
-        if(result % 10 == 0 && isActive==false)
+        if(result % 20 == 0 && isActive==false && isEnabled)
         {
             isActive = true;
             int counter = Int32.Parse(waveCounter.text);

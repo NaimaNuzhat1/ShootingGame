@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 
 public class powerUp : MonoBehaviour
 {
     public GameObject prefab;
     public GameObject player;
+
+
+    
     float[] positions = { -3.5f, 0, 3.5f };
     bool isSpawning = false;
     string[] tags = { "P1", "P2"};
@@ -15,6 +18,8 @@ public class powerUp : MonoBehaviour
     {
         PlayerPrefs.SetString("P1", "InActive");
         PlayerPrefs.SetFloat("P2", 0.8f);
+
+
     }
 
     // Update is called once per frame
@@ -29,7 +34,7 @@ public class powerUp : MonoBehaviour
     }
     IEnumerator spawnPowerUp()
     {
-        yield return new WaitForSeconds(40);
+        yield return new WaitForSeconds(31);
 
         int index = Random.Range(0, 2);
         int position = Random.Range(0, 3);
@@ -38,7 +43,7 @@ public class powerUp : MonoBehaviour
             position = (position + 1) % 3;
         }
         
-        Instantiate(prefab, new Vector3(positions[position], 0f, -17.63f), Quaternion.Euler(0f, 180, 0f));
+        Instantiate(prefab, new Vector3(positions[position], 1f, -17.3f), Quaternion.Euler(0f, 180, 0f));
         prefab.tag = tags[index];
         isSpawning = false;
     }
@@ -64,8 +69,7 @@ public class powerUp : MonoBehaviour
 
 
             }
-            MeshRenderer mesh = gameObject.GetComponent<MeshRenderer>();
-            mesh.enabled = false;
+
 
             gameObject.transform.localScale = Vector3.zero;
 
@@ -76,7 +80,8 @@ public class powerUp : MonoBehaviour
 
     IEnumerator p1()
     {
-        
+
+
         PlayerPrefs.SetString("P1", "Active");
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (var  e in enemy)
@@ -85,14 +90,17 @@ public class powerUp : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6);
         PlayerPrefs.SetString("P1", "InActive");
         Debug.Log("Time Ended:"+PlayerPrefs.GetString("P1"));
         Destroy(gameObject);
 
+
     }
     IEnumerator p2()
     {
+
+
 
         PlayerPrefs.SetFloat("P2", 0.3f);
 

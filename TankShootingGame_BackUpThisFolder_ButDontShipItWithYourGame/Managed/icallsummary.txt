@@ -790,6 +790,7 @@ UnityEngine.Transform::set_hasChanged
 UnityEngine.Transform::set_localPosition_Injected
 UnityEngine.Transform::set_localRotation_Injected
 UnityEngine.Transform::set_localScale_Injected
+UnityEngine.Transform::set_rotation_Injected
 UnityEngine.Transform::FindRelativeTransformWithPath
 UnityEngine.Transform::GetChild
 UnityEngine.Transform::GetParent

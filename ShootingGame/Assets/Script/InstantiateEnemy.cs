@@ -24,19 +24,20 @@ public class InstantiateEnemy : MonoBehaviour
     void Update()
     {
         int count = Int32.Parse(score.text);
+        if (count % 20 == 0 && isActive == false)
+        {
+            isActive = true;
+            waitTime -= 0.3f;
+            Debug.Log(waitTime);
+
+        }
+        else if (count % 20 != 0)
+        {
+            isActive = false;
+        }
         if (!isSpawning)
         {
-            if (count % 10 == 0 && isActive == false)
-            {
-                isActive = true;
-                waitTime -= 0.5f;
 
-
-            }
-            else if (count % 10 != 0)
-            {
-                isActive = false;
-            }
             string p1 = PlayerPrefs.GetString("P1");
 
             if (p1 == "InActive") { 

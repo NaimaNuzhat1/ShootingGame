@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
     int count = 0;
     bool isActive = false;
     Animator animator;
+    public GameObject brokenTank;
     private void OnEnable()
     {
         animator = GetComponent<Animator>();
@@ -31,20 +34,21 @@ public class Enemy : MonoBehaviour
         canvas.worldCamera = Camera.main;
         PlayerScore= GameObject.Find("Score");
         score = PlayerScore.GetComponent<TMP_Text>();
+        
 
     }
     private void FixedUpdate()
     {
         count = Int32.Parse(score.text);
         string p1Active = PlayerPrefs.GetString("P1", "InActive");
-        if (count % 10 == 0&& isActive==false)
+        if (count % 20 == 0&& isActive==false)
         {
             isActive = true;
-            moveSpeed += 0.5f;
+            moveSpeed += 0.25f;
 
 
         }
-        else if (count % 10 != 0)
+        else if (count % 20 != 0)
         {
             isActive = false;
         }
@@ -89,7 +93,14 @@ public class Enemy : MonoBehaviour
 
 
         }
+        else
+        {
+            gameObject.SetActive(false);
+            Instantiate(brokenTank, position, Quaternion.Euler(0f, 180, 0f));
+
+        }
         yield return new WaitForSeconds(0.5f);
+
         Destroy(gameObject);
 
     }
