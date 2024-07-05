@@ -6,7 +6,7 @@ public class BulletMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     Rigidbody rb;
-    float force=1000f;
+    float force = 1000f;
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody>();

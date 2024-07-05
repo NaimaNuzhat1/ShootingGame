@@ -7,15 +7,19 @@ using UnityEngine;
 public class WaveCounter : MonoBehaviour
 {
     public GameObject waveWin;
+    public GameObject startWindow;
     public TMP_Text score;
     public TMP_Text waveCounter;
     bool isActive = false;
     bool isEnabled = false;
+
     // Start is called before the first frame update
     private void OnEnable()
     {
         isEnabled = true;
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -27,10 +31,10 @@ public class WaveCounter : MonoBehaviour
             int counter = Int32.Parse(waveCounter.text);
             counter++;
             waveCounter.text = counter.ToString();
-            StartCoroutine(waveWinSet());
+            StartCoroutine(winSet(waveWin));
             
         }
-        else if(result % 10 != 0)
+        else if(result % 20 != 0)
         {
             isActive = false;
         }
@@ -38,10 +42,11 @@ public class WaveCounter : MonoBehaviour
 
        
     }
-    IEnumerator waveWinSet()
+    IEnumerator winSet(GameObject window)
     {
-        waveWin.SetActive(true);
+        window.SetActive(true);
         yield return new WaitForSeconds(1);
-        waveWin.SetActive(false);
+        window.SetActive(false);
+        isActive = true;
     }
 }

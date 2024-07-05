@@ -32,16 +32,16 @@ public class Enemy : MonoBehaviour
         canvas = healthbar.GetComponent<Canvas>();
         slider = canvas.GetComponentInChildren<Slider>();
         canvas.worldCamera = Camera.main;
-        PlayerScore= GameObject.Find("Score");
+        PlayerScore = GameObject.Find("Score");
         score = PlayerScore.GetComponent<TMP_Text>();
-        
+
 
     }
     private void FixedUpdate()
     {
         count = Int32.Parse(score.text);
         string p1Active = PlayerPrefs.GetString("P1", "InActive");
-        if (count % 20 == 0&& isActive==false)
+        if (count % 20 == 0 && isActive == false)
         {
             isActive = true;
             moveSpeed += 0.25f;
@@ -52,10 +52,10 @@ public class Enemy : MonoBehaviour
         {
             isActive = false;
         }
-        if (p1Active=="InActive")
+        if (p1Active == "InActive")
         {
             rb.velocity = transform.forward * moveSpeed;
-            
+
         }
         position = rb.position;
     }
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
             slider.value -= 1;
 
         }
-        
+
         if (slider.value <= 0)
         {
             Instantiate(hitPrefab, position, Quaternion.identity);
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
             count++;
             score.text = count.ToString();
         }
-        
+
         if (collision.gameObject.CompareTag("Finish"))
         {
 
@@ -105,5 +105,5 @@ public class Enemy : MonoBehaviour
 
     }
 
-    
+
 }

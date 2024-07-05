@@ -59,15 +59,5 @@ public class gameOver : MonoBehaviour
         
 
     }
-    public void retryClick()
-    {
-        gameOverWin.gameObject.SetActive(false);
 
-
-        SceneManager.LoadScene("Game");
-    }
-    public void onQuitClicked()
-    {
-        Application.Quit();
-    }
 }

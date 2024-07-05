@@ -27,7 +27,7 @@ public class GunMode : MonoBehaviour
     void Start()
     {
         tankRB = tank.GetComponent<Rigidbody>();
-        //PlayerPrefs.SetString("Mode", "Auto");
+      //  PlayerPrefs.SetString("Mode", "Auto");
         wait = false;
     }
 
@@ -50,10 +50,10 @@ public class GunMode : MonoBehaviour
 
     }
 
-    public  void shootClick()
+    public void shootClick()
     {
         GameObject[] bullets = GameObject.FindGameObjectsWithTag("Bullet");
-        if (bullets!=null)
+        if (bullets != null)
         {
             bulletCount = bullets.Length;
         }
@@ -63,10 +63,10 @@ public class GunMode : MonoBehaviour
         }
 
         if (bulletCount <= 5 && wait == false)
-            {
-                
-                StartCoroutine(shoot());
-            }
+        {
+
+            StartCoroutine(shoot());
+        }
     }
     IEnumerator shoot()
     {
@@ -74,7 +74,7 @@ public class GunMode : MonoBehaviour
         float speed = PlayerPrefs.GetFloat("P2");
 
         wait = true;
-        if(bulletCount==0 || Mode=="Manual")
+        if (bulletCount == 0 || Mode == "Manual")
         {
             yield return new WaitForSeconds(0.1f);
         }

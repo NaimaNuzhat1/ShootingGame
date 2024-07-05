@@ -9,7 +9,7 @@ public class InstantiateEnemy : MonoBehaviour
     public GameObject[] enemy;
     float[] positions = { -3.5f, 0, 3.5f };
     bool isSpawning = false;
-    float waitTime=3f;
+    float waitTime = 3f;
     public TMP_Text score;
     bool isActive = false;
 
@@ -40,7 +40,8 @@ public class InstantiateEnemy : MonoBehaviour
 
             string p1 = PlayerPrefs.GetString("P1");
 
-            if (p1 == "InActive") { 
+            if (p1 == "InActive")
+            {
                 isSpawning = true; //Yep, we're going to spawn
 
                 StartCoroutine(spawnEnemy());
@@ -52,7 +53,7 @@ public class InstantiateEnemy : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         int index = UnityEngine.Random.Range(0, 3);
         int position = UnityEngine.Random.Range(0, 3);
-        Instantiate(enemy[index], new Vector3(positions[position], 0f, 16.3f),Quaternion.Euler(0f, 180, 0f));
+        Instantiate(enemy[index], new Vector3(positions[position], 0f, 16.3f), Quaternion.Euler(0f, 180, 0f));
         isSpawning = false;
     }
 }
