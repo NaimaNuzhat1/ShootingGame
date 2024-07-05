@@ -40,13 +40,14 @@ public class gameOver : MonoBehaviour
             tank.SetActive(true);
 
 
-
+            PlayerPrefs.DeleteAll();
             int result = Int32.Parse(score.text);
             int high = Int32.Parse(Hscore.text);
             if (result > high)
             {
                 PlayerPrefs.SetString("highScore", score.text);
             }
+
 
 
             GameObject[] enemiesActive = GameObject.FindGameObjectsWithTag("Enemy");

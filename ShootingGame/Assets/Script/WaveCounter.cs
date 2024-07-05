@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class WaveCounter : MonoBehaviour
 {
@@ -25,7 +27,7 @@ public class WaveCounter : MonoBehaviour
     void Update()
     {
         int result = Int32.Parse(score.text);
-        if(result % 20 == 0 && isActive==false && isEnabled)
+        if(result % 20 == 0 && isActive==false && isEnabled && result / 20 < 3)
         {
             isActive = true;
             int counter = Int32.Parse(waveCounter.text);
@@ -38,7 +40,15 @@ public class WaveCounter : MonoBehaviour
         {
             isActive = false;
         }
+        if(result/20==3)
+        {
 
+            PlayerPrefs.SetString("Boss","true");
+
+            PlayerPrefs.SetString("Score", score.text);
+            SceneManager.LoadScene("BossLevel");
+
+        }
 
        
     }

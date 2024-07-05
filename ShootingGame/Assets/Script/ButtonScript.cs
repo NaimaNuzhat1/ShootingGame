@@ -13,7 +13,7 @@ public class ButtonScript : MonoBehaviour
 
     public Button autoButton;
     public Button manualButton;
-    public GameObject playButton;
+
 
     // Start is called before the first frame update
     void Update()

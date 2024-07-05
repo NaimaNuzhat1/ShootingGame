@@ -25,6 +25,7 @@ public class SetActiveScript : MonoBehaviour
         window.SetActive(true);
         yield return new WaitForSeconds(1);
         window.SetActive(false);
+        
         waveWin.SetActive(true);
 
 
