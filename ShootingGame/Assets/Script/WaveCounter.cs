@@ -14,6 +14,7 @@ public class WaveCounter : MonoBehaviour
     public TMP_Text waveCounter;
     bool isActive = false;
     bool isEnabled = false;
+    float moveSpeed = 3f;
 
     // Start is called before the first frame update
     private void OnEnable()
@@ -26,21 +27,25 @@ public class WaveCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int result = Int32.Parse(score.text);
-        if(result % 20 == 0 && isActive==false && isEnabled && result / 20 < 3)
+        int result = Int32.Parse(score.text)/20 +1;
+        int counter = Int32.Parse(waveCounter.text);
+        if (result >counter && !isActive)
         {
+            PlayerPrefs.SetString("Wave", "true");
             isActive = true;
-            int counter = Int32.Parse(waveCounter.text);
+            moveSpeed += 0.25f;
+            PlayerPrefs.SetFloat("MoveSpeed", moveSpeed);
             counter++;
             waveCounter.text = counter.ToString();
             StartCoroutine(winSet(waveWin));
             
         }
-        else if(result % 20 != 0)
+        else if (result <= counter)
         {
+            PlayerPrefs.SetString("Wave", "false");
             isActive = false;
         }
-        if(result/20==5)
+        if(counter==5)
         { 
             PlayerPrefs.SetString("Boss","true");
             PlayerPrefs.SetString("Score", score.text);

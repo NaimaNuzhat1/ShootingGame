@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     float moveSpeed = 3f;
     public TMP_Text score;
     int count = 0;
-    bool isActive = false;
     Animator animator;
     public GameObject brokenTank;
     bool isHit = false;
@@ -39,21 +38,17 @@ public class Enemy : MonoBehaviour
 
 
     }
-    private void FixedUpdate()
+    private void Update()
     {
         count = Int32.Parse(score.text);
+        string wave = PlayerPrefs.GetString("Wave");
+        moveSpeed=PlayerPrefs.GetFloat("MoveSpeed", 3f);
+        Debug.Log("MoveSpeed" + moveSpeed);
+
+    }
+    private void FixedUpdate()
+    {
         string p1Active = PlayerPrefs.GetString("P1", "InActive");
-        if (count % 20 == 0 && isActive == false)
-        {
-            isActive = true;
-            moveSpeed += 0.25f;
-
-
-        }
-        else if (count % 20 != 0)
-        {
-            isActive = false;
-        }
         if (p1Active == "InActive")
         {
             rb.velocity = transform.forward * moveSpeed;

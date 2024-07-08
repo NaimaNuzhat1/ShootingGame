@@ -10,7 +10,7 @@ public class InstantiateEnemy : MonoBehaviour
     public GameObject[] enemy;
     float[] positions = { -3.5f, 0, 3.5f };
     bool isSpawning = false;
-    float waitTime = 3f;
+    float waitTime = 2.8f;
     public TMP_Text score;
     bool isActive = false;
     public GameObject boss;
@@ -28,17 +28,18 @@ public class InstantiateEnemy : MonoBehaviour
     void Update()
     {
         string check = PlayerPrefs.GetString("Boss");
+        string wave = PlayerPrefs.GetString("Wave");
         if (!check.Equals("true"))
             {
-            int count = Int32.Parse(score.text);
-            if (count % 20 == 0 && isActive == false)
+
+            if (wave == "true" && isActive == false)
             {
                 isActive = true;
                 waitTime -= 0.3f;
-                Debug.Log(waitTime);
+                Debug.Log("WAIT TIME:" + waitTime);
 
             }
-            else if (count % 20 != 0)
+            else if(wave == "false")
             {
                 isActive = false;
             }
@@ -57,7 +58,7 @@ public class InstantiateEnemy : MonoBehaviour
         }
         else
         {
-            waitTime = 2.5f;
+            waitTime = 2.2f;
             if (!spawBoss)
             {
                 StartCoroutine(instantiateBoss());

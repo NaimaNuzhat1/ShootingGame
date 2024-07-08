@@ -16430,16 +16430,16 @@ struct UpdaterArray_tF8D43D2A3598E7C17ABB5308E83FDECF1F36A449  : public RuntimeO
 	IVisualTreeUpdaterU5BU5D_t9E9D948BC4F327DA519FEB2BCEC12FB7FD7C59E8* ___m_VisualTreeUpdaters_0;
 };
 
-// WaveCounter/<winSet>d__8
-struct U3CwinSetU3Ed__8_t56771287819E495B296028DC393FE1D8D3E61D5B  : public RuntimeObject
+// WaveCounter/<winSet>d__9
+struct U3CwinSetU3Ed__9_t38EF82EECEBE876CE8595347A5CEF2154C33D060  : public RuntimeObject
 {
-	// System.Int32 WaveCounter/<winSet>d__8::<>1__state
+	// System.Int32 WaveCounter/<winSet>d__9::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object WaveCounter/<winSet>d__8::<>2__current
+	// System.Object WaveCounter/<winSet>d__9::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// UnityEngine.GameObject WaveCounter/<winSet>d__8::window
+	// UnityEngine.GameObject WaveCounter/<winSet>d__9::window
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___window_2;
-	// WaveCounter WaveCounter/<winSet>d__8::<>4__this
+	// WaveCounter WaveCounter/<winSet>d__9::<>4__this
 	WaveCounter_t158BBB4A45BBB53252219C66C5B4E118812B41DF* ___U3CU3E4__this_3;
 };
 
@@ -60671,14 +60671,12 @@ struct Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB  : public MonoBehaviour_t
 	TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* ___score_12;
 	// System.Int32 Enemy::count
 	int32_t ___count_13;
-	// System.Boolean Enemy::isActive
-	bool ___isActive_14;
 	// UnityEngine.Animator Enemy::animator
-	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animator_15;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animator_14;
 	// UnityEngine.GameObject Enemy::brokenTank
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___brokenTank_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___brokenTank_15;
 	// System.Boolean Enemy::isHit
-	bool ___isHit_17;
+	bool ___isHit_16;
 };
 
 // UnityEngine.EventSystems.EventTrigger
@@ -61655,6 +61653,8 @@ struct WaveCounter_t158BBB4A45BBB53252219C66C5B4E118812B41DF  : public MonoBehav
 	bool ___isActive_8;
 	// System.Boolean WaveCounter::isEnabled
 	bool ___isEnabled_9;
+	// System.Single WaveCounter::moveSpeed
+	float ___moveSpeed_10;
 };
 
 // UnityEngine.InputSystem.XInput.XInputController
@@ -72553,7 +72553,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize4097 = { sizeof(U3CwinSetU3E
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4098;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize4098 = { sizeof(SetActiveScript_t76914B03C2A846559043BB4F00C26DD587ABB133), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4099;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize4099 = { sizeof(U3CwinSetU3Ed__8_t56771287819E495B296028DC393FE1D8D3E61D5B), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize4099 = { sizeof(U3CwinSetU3Ed__9_t38EF82EECEBE876CE8595347A5CEF2154C33D060), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4100;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize4100 = { sizeof(WaveCounter_t158BBB4A45BBB53252219C66C5B4E118812B41DF), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4101;

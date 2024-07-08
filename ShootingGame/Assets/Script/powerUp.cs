@@ -106,7 +106,6 @@ public class powerUp : MonoBehaviour
 
         yield return new WaitForSeconds(5);
         PlayerPrefs.SetFloat("P2", 0.8f);
-        Debug.Log(PlayerPrefs.GetString("P2"));
         Destroy(gameObject);
 
     }
