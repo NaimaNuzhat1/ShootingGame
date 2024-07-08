@@ -88,18 +88,18 @@ extern void Enemy_OnCollisionEnter_mA8E3F644B8068B1BA5496C6AD2E43A65EBA978DB (vo
 extern void Enemy_animateDeath_m127FB27AC3635549C2D675CA74E09F263B858563 (void);
 // 0x00000026 System.Void Enemy::.ctor()
 extern void Enemy__ctor_mB6697627910F785A971C20C671DEFBA9D921D933 (void);
-// 0x00000027 System.Void Enemy/<animateDeath>d__16::.ctor(System.Int32)
-extern void U3CanimateDeathU3Ed__16__ctor_mE38175FADCBAE62ED0C34204E6F91B2B499F39D0 (void);
-// 0x00000028 System.Void Enemy/<animateDeath>d__16::System.IDisposable.Dispose()
-extern void U3CanimateDeathU3Ed__16_System_IDisposable_Dispose_m16B0FBBBAD72E77BC619411C41D16172A2EBF552 (void);
-// 0x00000029 System.Boolean Enemy/<animateDeath>d__16::MoveNext()
-extern void U3CanimateDeathU3Ed__16_MoveNext_m14F14978B98A4AE7B522A139977BD185D6901BBB (void);
-// 0x0000002A System.Object Enemy/<animateDeath>d__16::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
-extern void U3CanimateDeathU3Ed__16_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8E5D2F0727B6A324C0FDCC21F713716E3EBEF356 (void);
-// 0x0000002B System.Void Enemy/<animateDeath>d__16::System.Collections.IEnumerator.Reset()
-extern void U3CanimateDeathU3Ed__16_System_Collections_IEnumerator_Reset_m9BDB349BA34545C521B0F4B9A65DC055DBC61213 (void);
-// 0x0000002C System.Object Enemy/<animateDeath>d__16::System.Collections.IEnumerator.get_Current()
-extern void U3CanimateDeathU3Ed__16_System_Collections_IEnumerator_get_Current_m19C475A443864577ECD84F3DF3E9F583D8424580 (void);
+// 0x00000027 System.Void Enemy/<animateDeath>d__17::.ctor(System.Int32)
+extern void U3CanimateDeathU3Ed__17__ctor_m844DC37EADC7A300C4769F0E3B64C08FA8D74FF6 (void);
+// 0x00000028 System.Void Enemy/<animateDeath>d__17::System.IDisposable.Dispose()
+extern void U3CanimateDeathU3Ed__17_System_IDisposable_Dispose_m7A23BA238E96BE9BA2746359E2FD36B2979FF36E (void);
+// 0x00000029 System.Boolean Enemy/<animateDeath>d__17::MoveNext()
+extern void U3CanimateDeathU3Ed__17_MoveNext_mEC672585939A1D35B50D10C4320C493FB6A22C7C (void);
+// 0x0000002A System.Object Enemy/<animateDeath>d__17::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+extern void U3CanimateDeathU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAB5EA9367C7B80EFB7C0E9BB3B698274C94FEB55 (void);
+// 0x0000002B System.Void Enemy/<animateDeath>d__17::System.Collections.IEnumerator.Reset()
+extern void U3CanimateDeathU3Ed__17_System_Collections_IEnumerator_Reset_mB6A4F7C74F6CC8526BDDFD0FC95A2DB4783B99E3 (void);
+// 0x0000002C System.Object Enemy/<animateDeath>d__17::System.Collections.IEnumerator.get_Current()
+extern void U3CanimateDeathU3Ed__17_System_Collections_IEnumerator_get_Current_mAADD43547E06AA93380948C2518270DC5358654C (void);
 // 0x0000002D System.Void fire::Awake()
 extern void fire_Awake_m1E0D3C4ED92FDEDBBBBEB5A1AAA2E58BE2666B3A (void);
 // 0x0000002E System.Void fire::.ctor()
@@ -354,12 +354,12 @@ static Il2CppMethodPointer s_methodPointers[151] =
 	Enemy_OnCollisionEnter_mA8E3F644B8068B1BA5496C6AD2E43A65EBA978DB,
 	Enemy_animateDeath_m127FB27AC3635549C2D675CA74E09F263B858563,
 	Enemy__ctor_mB6697627910F785A971C20C671DEFBA9D921D933,
-	U3CanimateDeathU3Ed__16__ctor_mE38175FADCBAE62ED0C34204E6F91B2B499F39D0,
-	U3CanimateDeathU3Ed__16_System_IDisposable_Dispose_m16B0FBBBAD72E77BC619411C41D16172A2EBF552,
-	U3CanimateDeathU3Ed__16_MoveNext_m14F14978B98A4AE7B522A139977BD185D6901BBB,
-	U3CanimateDeathU3Ed__16_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m8E5D2F0727B6A324C0FDCC21F713716E3EBEF356,
-	U3CanimateDeathU3Ed__16_System_Collections_IEnumerator_Reset_m9BDB349BA34545C521B0F4B9A65DC055DBC61213,
-	U3CanimateDeathU3Ed__16_System_Collections_IEnumerator_get_Current_m19C475A443864577ECD84F3DF3E9F583D8424580,
+	U3CanimateDeathU3Ed__17__ctor_m844DC37EADC7A300C4769F0E3B64C08FA8D74FF6,
+	U3CanimateDeathU3Ed__17_System_IDisposable_Dispose_m7A23BA238E96BE9BA2746359E2FD36B2979FF36E,
+	U3CanimateDeathU3Ed__17_MoveNext_mEC672585939A1D35B50D10C4320C493FB6A22C7C,
+	U3CanimateDeathU3Ed__17_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mAB5EA9367C7B80EFB7C0E9BB3B698274C94FEB55,
+	U3CanimateDeathU3Ed__17_System_Collections_IEnumerator_Reset_mB6A4F7C74F6CC8526BDDFD0FC95A2DB4783B99E3,
+	U3CanimateDeathU3Ed__17_System_Collections_IEnumerator_get_Current_mAADD43547E06AA93380948C2518270DC5358654C,
 	fire_Awake_m1E0D3C4ED92FDEDBBBBEB5A1AAA2E58BE2666B3A,
 	fire__ctor_m3336CE3A6910C1E508B4090B96DD12CBFBDF471B,
 	gameOver_Start_m967FC334A8E25A5B9B9688B0563FD54461380C17,

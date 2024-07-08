@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     bool isActive = false;
     Animator animator;
     public GameObject brokenTank;
+    bool isHit = false;
     private void OnEnable()
     {
         animator = GetComponent<Animator>();
@@ -71,14 +72,16 @@ public class Enemy : MonoBehaviour
         {
             slider.value -= 1;
 
+
         }
 
         if (slider.value <= 0)
         {
+           if (isHit == false){
             Instantiate(hitPrefab, position, Quaternion.identity);
             StartCoroutine(animateDeath());
-            count++;
-            score.text = count.ToString();
+
+            }
         }
        
 
@@ -92,21 +95,32 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator animateDeath()
     {
+        isHit = true;
+        count++;
+
         if (animator)
         {
+            
             animator.SetBool("isDead", true);
 
 
         }
         else
         {
+            count += 2;
+            score.text = count.ToString();
             gameObject.SetActive(false);
+
             Instantiate(brokenTank, position, Quaternion.Euler(0f, 180, 0f));
 
         }
-        yield return new WaitForSeconds(0.5f);
+        score.text = count.ToString();
 
+        yield return new WaitForSeconds(0.5f);
+       
         Destroy(gameObject);
+
+        isHit = false;
 
     }
 

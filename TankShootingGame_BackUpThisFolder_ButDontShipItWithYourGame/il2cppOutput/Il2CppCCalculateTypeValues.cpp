@@ -14482,14 +14482,14 @@ struct EncodingCharBuffer_tF1455365553383EE2885AA2DBE79A01F8CBD5BAF  : public Ru
 	DecoderFallbackBuffer_t02E41C0BEC894A17CFE1A1FE88A2388DFDA05A73* ___fallbackBuffer_9;
 };
 
-// Enemy/<animateDeath>d__16
-struct U3CanimateDeathU3Ed__16_t934EE85FD121F8212F3346490314D7BAD19D3248  : public RuntimeObject
+// Enemy/<animateDeath>d__17
+struct U3CanimateDeathU3Ed__17_t9A2C56867E0F9A6EE5CBF0A4A2D250F98A2D3DD0  : public RuntimeObject
 {
-	// System.Int32 Enemy/<animateDeath>d__16::<>1__state
+	// System.Int32 Enemy/<animateDeath>d__17::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Enemy/<animateDeath>d__16::<>2__current
+	// System.Object Enemy/<animateDeath>d__17::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Enemy Enemy/<animateDeath>d__16::<>4__this
+	// Enemy Enemy/<animateDeath>d__17::<>4__this
 	Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB* ___U3CU3E4__this_2;
 };
 
@@ -60677,6 +60677,8 @@ struct Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB  : public MonoBehaviour_t
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animator_15;
 	// UnityEngine.GameObject Enemy::brokenTank
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___brokenTank_16;
+	// System.Boolean Enemy::isHit
+	bool ___isHit_17;
 };
 
 // UnityEngine.EventSystems.EventTrigger
@@ -72509,7 +72511,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize4076 = { sizeof(BulletMoveme
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4077;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize4077 = { sizeof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4078;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize4078 = { sizeof(U3CanimateDeathU3Ed__16_t934EE85FD121F8212F3346490314D7BAD19D3248), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize4078 = { sizeof(U3CanimateDeathU3Ed__17_t9A2C56867E0F9A6EE5CBF0A4A2D250F98A2D3DD0), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4079;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize4079 = { sizeof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize4080;

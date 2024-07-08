@@ -2920,14 +2920,14 @@ struct OptionDataList_t53255477D0A9C6980AB48693A520EFBC94DFFB96  : public Runtim
 	List_1_tCEC1993B65ACD0529D8C0BB5006274E22D7D8A55* ___m_Options_0;
 };
 
-// Enemy/<animateDeath>d__16
-struct U3CanimateDeathU3Ed__16_t934EE85FD121F8212F3346490314D7BAD19D3248  : public RuntimeObject
+// Enemy/<animateDeath>d__17
+struct U3CanimateDeathU3Ed__17_t9A2C56867E0F9A6EE5CBF0A4A2D250F98A2D3DD0  : public RuntimeObject
 {
-	// System.Int32 Enemy/<animateDeath>d__16::<>1__state
+	// System.Int32 Enemy/<animateDeath>d__17::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Enemy/<animateDeath>d__16::<>2__current
+	// System.Object Enemy/<animateDeath>d__17::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Enemy Enemy/<animateDeath>d__16::<>4__this
+	// Enemy Enemy/<animateDeath>d__17::<>4__this
 	Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB* ___U3CU3E4__this_2;
 };
 
@@ -11485,6 +11485,8 @@ struct Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB  : public MonoBehaviour_t
 	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animator_15;
 	// UnityEngine.GameObject Enemy::brokenTank
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___brokenTank_16;
+	// System.Boolean Enemy::isHit
+	bool ___isHit_17;
 };
 
 // UnityEngine.EventSystems.EventTrigger
@@ -14556,10 +14558,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4077[6] =
 	static_cast<int32_t>(offsetof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026, ___MainMenu_4)),static_cast<int32_t>(offsetof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026, ___GameOverWindow_5)),static_cast<int32_t>(offsetof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026, ___autoButton_6)),static_cast<int32_t>(offsetof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026, ___manualButton_7)),static_cast<int32_t>(offsetof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026, ___HighScore_8)),static_cast<int32_t>(offsetof(ButtonScript_t2941A7ECA4C66A13E86D78F14169E89857C0D026, ___Score_9)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4078[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CanimateDeathU3Ed__16_t934EE85FD121F8212F3346490314D7BAD19D3248, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CanimateDeathU3Ed__16_t934EE85FD121F8212F3346490314D7BAD19D3248, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CanimateDeathU3Ed__16_t934EE85FD121F8212F3346490314D7BAD19D3248, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4079[13] = 
+	static_cast<int32_t>(offsetof(U3CanimateDeathU3Ed__17_t9A2C56867E0F9A6EE5CBF0A4A2D250F98A2D3DD0, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CanimateDeathU3Ed__17_t9A2C56867E0F9A6EE5CBF0A4A2D250F98A2D3DD0, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CanimateDeathU3Ed__17_t9A2C56867E0F9A6EE5CBF0A4A2D250F98A2D3DD0, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4079[14] = 
 {
-	static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___rb_4)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___slider_5)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___hitPrefab_6)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___healthbar_7)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___PlayerScore_8)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___canvas_9)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___position_10)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___moveSpeed_11)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___score_12)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___count_13)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___isActive_14)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___animator_15)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___brokenTank_16)),};
+	static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___rb_4)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___slider_5)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___hitPrefab_6)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___healthbar_7)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___PlayerScore_8)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___canvas_9)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___position_10)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___moveSpeed_11)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___score_12)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___count_13)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___isActive_14)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___animator_15)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___brokenTank_16)),static_cast<int32_t>(offsetof(Enemy_t10DB314C96B1CE78B8D967CD3B39F05126409BBB, ___isHit_17)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4080[1] = 
 {
 	static_cast<int32_t>(offsetof(fire_t681E11C61B81708A2984605BE72569220ED9CB42, ___lifeTime_4)),};
