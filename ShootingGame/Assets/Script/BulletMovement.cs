@@ -16,10 +16,17 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boundry"))
+        if (collision.gameObject.CompareTag("Boundry") || collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("Collision");
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Enemy") && this.name!="EnemyBullet(Clone)")
+        {
+            Destroy(this.gameObject);
+        }
+
+
+
     }
 }

@@ -1,21 +1,34 @@
 using UnityEngine;
 
+using UnityEngine.UI;
+
 
 public class PlayerControls : MonoBehaviour
 {
-    Rigidbody rb;
+    public Rigidbody rb;
     Vector3 position;
 
+    public Slider slider;
+
+    public GameObject healthbar;
+    GameObject PlayerScore;
+    public Canvas canvas;
 
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
+        healthbar = gameObject.transform.Find("Healthbar").gameObject;
+        canvas = healthbar.GetComponent<Canvas>();
+        slider = canvas.GetComponentInChildren<Slider>();
+
         position = new Vector3(0f, 0.779999971f, -17.63f);
-        rb.MovePosition(position); 
+        rb.MovePosition(position);
+
 
     }
 
@@ -93,4 +106,20 @@ public class PlayerControls : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.name=="EnemyBullet(Clone)" )
+        {
+            slider.value -= 1;
+
+        }
+
+        if (slider.value <= 0)
+        {
+            PlayerPrefs.SetString("GameOver", "true");
+        }
+
+    }
+
 }

@@ -1,7 +1,10 @@
 
+using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 public class ButtonScript : MonoBehaviour
 {
@@ -14,8 +17,15 @@ public class ButtonScript : MonoBehaviour
     public Button autoButton;
     public Button manualButton;
 
+    public TMP_Text HighScore;
+    public TMP_Text Score;
 
     // Start is called before the first frame update
+    private void Start()
+    {
+        HighScore.text = PlayerPrefs.GetString("HighScore", "0");
+
+    }
     void Update()
     {
         string Mode = PlayerPrefs.GetString("Mode","Manual");
@@ -31,6 +41,18 @@ public class ButtonScript : MonoBehaviour
             autoButton.image.enabled = false;
             manualButton.image.enabled = true;
         }
+        int result = Int32.Parse(Score.text);
+        int high = Int32.Parse(HighScore.text);
+        if (result > high)
+        {
+            PlayerPrefs.SetString("HighScore", Score.text);
+
+        }
+
+
+
+
+        
     }
     
     public void onPlayClicked()
@@ -62,4 +84,8 @@ public class ButtonScript : MonoBehaviour
 
     }
 
+    public void onContinueClicked()
+    {
+        SceneManager.LoadScene("game");
+    }
 }

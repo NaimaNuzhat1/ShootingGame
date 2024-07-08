@@ -40,12 +40,11 @@ public class WaveCounter : MonoBehaviour
         {
             isActive = false;
         }
-        if(result/20==3)
-        {
-
+        if(result/20==5)
+        { 
             PlayerPrefs.SetString("Boss","true");
-
             PlayerPrefs.SetString("Score", score.text);
+
             SceneManager.LoadScene("BossLevel");
 
         }

@@ -16,6 +16,7 @@ public class InstantiateEnemy : MonoBehaviour
     public GameObject boss;
     bool spawBoss = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,25 +42,37 @@ public class InstantiateEnemy : MonoBehaviour
             {
                 isActive = false;
             }
+            if (!isSpawning)
+            {
+
+                string p1 = PlayerPrefs.GetString("P1");
+
+                if (p1 == "InActive")
+                {
+                    isSpawning = true; //Yep, we're going to spawn
+
+                    StartCoroutine(spawnEnemy());
+                }
+            }
         }
         else
         {
-            waitTime = 2f;
-            if(!spawBoss)
+            waitTime = 2.5f;
+            if (!spawBoss)
             {
-                instantiateBoss();
+                StartCoroutine(instantiateBoss());
                 spawBoss = true;
-            }
-           
+           }
+
         }
         if (!isSpawning)
         {
 
-            string p1 = PlayerPrefs.GetString("P1");
+          string p1 = PlayerPrefs.GetString("P1");
 
             if (p1 == "InActive")
             {
-                isSpawning = true; //Yep, we're going to spawn
+               isSpawning = true; //Yep, we're going to spawn
 
                 StartCoroutine(spawnEnemy());
             }
@@ -75,9 +88,12 @@ public class InstantiateEnemy : MonoBehaviour
         Instantiate(enemy[index], new Vector3(positions[position], 0f, 16.3f), Quaternion.Euler(0f, 180, 0f));
         isSpawning = false;
     }
-    void instantiateBoss()
+    IEnumerator instantiateBoss()
     {
         int position = UnityEngine.Random.Range(0, 3);
-        Instantiate(boss, new Vector3(positions[position], 0f, 16.3f), Quaternion.Euler(0f, 180, 0f));
+        yield return new WaitForSeconds(3);
+        Instantiate(boss, new Vector3(positions[position], 1.05f, 16.3f), Quaternion.Euler(0f, 90f, 0f));
+
+       
     }
 }

@@ -13,10 +13,10 @@ public class Enemy : MonoBehaviour
     Rigidbody rb;
     public Slider slider;
     public GameObject hitPrefab;
-    GameObject sliderObj;
-    GameObject healthbar;
+
+    public GameObject healthbar;
     GameObject PlayerScore;
-    Canvas canvas;
+    public Canvas canvas;
     Vector3 position;
     float moveSpeed = 3f;
     public TMP_Text score;
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
         canvas.worldCamera = Camera.main;
         PlayerScore = GameObject.Find("Score");
         score = PlayerScore.GetComponent<TMP_Text>();
+
 
 
     }
@@ -57,6 +58,7 @@ public class Enemy : MonoBehaviour
             rb.velocity = transform.forward * moveSpeed;
 
         }
+
         position = rb.position;
     }
 
@@ -64,6 +66,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
+        string boss = PlayerPrefs.GetString("Boss");
         if (collision.gameObject.CompareTag("Bullet"))
         {
             slider.value -= 1;
@@ -77,6 +80,7 @@ public class Enemy : MonoBehaviour
             count++;
             score.text = count.ToString();
         }
+       
 
         if (collision.gameObject.CompareTag("Finish"))
         {
@@ -84,6 +88,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
 
         }
+        
     }
     IEnumerator animateDeath()
     {
