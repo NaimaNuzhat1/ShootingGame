@@ -308,7 +308,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 5382821218789352390}
   hitPrefab: {fileID: 108632, guid: fd983eb81b9b75e4e99a14b860ce7452, type: 3}
+  healthbar: {fileID: 0}
+  canvas: {fileID: 0}
   score: {fileID: 0}
+  brokenTank: {fileID: 0}
 --- !u!54 &5226676374895538727
 Rigidbody:
   m_ObjectHideFlags: 0

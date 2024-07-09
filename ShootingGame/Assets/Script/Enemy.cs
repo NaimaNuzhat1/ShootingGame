@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        count = Int32.Parse(score.text);
+        
         string wave = PlayerPrefs.GetString("Wave");
         moveSpeed=PlayerPrefs.GetFloat("MoveSpeed", 3f);
         Debug.Log("MoveSpeed" + moveSpeed);
@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator animateDeath()
     {
+        count = Int32.Parse(score.text);
         isHit = true;
         count++;
 
@@ -97,6 +98,7 @@ public class Enemy : MonoBehaviour
         {
             
             animator.SetBool("isDead", true);
+            score.text = count.ToString();
 
 
         }
@@ -109,7 +111,7 @@ public class Enemy : MonoBehaviour
             Instantiate(brokenTank, position, Quaternion.Euler(0f, 180, 0f));
 
         }
-        score.text = count.ToString();
+
 
         yield return new WaitForSeconds(0.5f);
        

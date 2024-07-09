@@ -36,7 +36,6 @@ public class InstantiateEnemy : MonoBehaviour
             {
                 isActive = true;
                 waitTime -= 0.3f;
-                Debug.Log("WAIT TIME:" + waitTime);
 
             }
             else if(wave == "false")

@@ -104,7 +104,7 @@ public class Boss : MonoBehaviour
     IEnumerator shoot()
     {
         wait = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.25f);
 
         Instantiate(bullet, new Vector3(position.x, 1.56363797f, position.z),Quaternion.Euler(0f,180f,0f));
 
